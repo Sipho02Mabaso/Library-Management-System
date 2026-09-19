@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library | Librarian</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/theme.css?v=5" />
+  <link rel="stylesheet" href="css/app.css?v=5" />
+  <script src="js/api.js" defer></script><script src="js/auth.js?v=5" defer></script>
+  <script src="js/books.js" defer></script><script src="js/rooms.js" defer></script><script src="js/sessions.js" defer></script>
+  <script src="js/bookings.js" defer></script><script src="js/role-app.js" defer></script>
+  <script src="js/librarian.js?v=1" defer></script>
+</head>
+<body class="loaded">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <nav class="top-nav"><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation"><i class="bi bi-list"></i></button><div class="logo" id="logo"><i class="bi bi-book-half"></i><span>Library Management System</span></div></nav>
+  <aside class="sidebar" id="sidebar"><ul id="navLinks">
+    <li><a href="#/" data-route="/"><i class="bi bi-speedometer2 sidebar-icon"></i><span class="sidebar-label">Librarian Desk</span></a></li>
+    <li><a href="#/books" data-route="/books"><i class="bi bi-book sidebar-icon"></i><span class="sidebar-label">Manage Books</span></a></li>
+    <li><a href="#/sessions" data-route="/sessions"><i class="bi bi-mic sidebar-icon"></i><span class="sidebar-label">Manage Sessions</span></a></li>
+    <li><a href="#/rooms" data-route="/rooms"><i class="bi bi-building sidebar-icon"></i><span class="sidebar-label">Manage Rooms</span></a></li>
+    <li><a href="#" id="logoutLink"><i class="bi bi-box-arrow-right sidebar-icon"></i><span class="sidebar-label">Log out</span></a></li>
+  </ul></aside>
+  <main class="main-content" id="mainContent"></main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const app = new RoleApp('Librarian', {
+        '/': () => LibrarianPage.desk(),
+        '/books': () => LibrarianPage.books(),
+        '/sessions': () => LibrarianPage.sessions(),
+        '/rooms': () => LibrarianPage.rooms()
+      });
+      window.roleApp = app;
+      app.init();
+    });
+  </script>
+</body>
+</html>

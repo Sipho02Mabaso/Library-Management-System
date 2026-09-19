@@ -1,0 +1,10 @@
+# IDE
+.kilo/
+.vscode/
+
+# FrontEnd
+client/js/
+
+# BackEnd
+server/
+AGENTS.md/

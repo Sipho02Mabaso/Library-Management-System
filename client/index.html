@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/theme.css?v=3" />
+  <link rel="stylesheet" href="css/landing.css?v=3" />
+  <link rel="stylesheet" href="css/app.css?v=3" />
+  <script src="js/api.js" defer></script>
+  <script src="js/auth.js?v=6" defer></script>
+  <script src="js/landing.js" defer></script>
+  <script src="js/books.js" defer></script>
+  <script src="js/rooms.js" defer></script>
+  <script src="js/sessions.js" defer></script>
+  <script src="js/bookings.js" defer></script>
+  <script src="js/profile.js" defer></script>
+  <script src="js/debt.js" defer></script>
+  <script src="js/auth-page.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/saved-books.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- Loading Spinner Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner-container">
+      <div class="spinner-ring"></div>
+      <i class="bi bi-book-fill spinner-book-icon"></i>
+    </div>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav" id="topNav">
+    <button class="sidebar-toggle" id="sidebarToggle" title="Toggle navigation" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="logo" id="logo">
+      <i class="bi bi-book-half" aria-hidden="true"></i>
+      <span>Library Management System</span>
+    </div>
+    <div class="nav-right">
+      <div class="profile-trigger" id="profileTrigger" style="display: none;" title="Profile"></div>
+      <div class="profile-dropdown" id="profileDropdown"></div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <ul id="navLinks"></ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <div class="page-title">
+      <h1>Welcome to the Library</h1>
+      <p>Explore our collection and services</p>
+    </div>
+    <div class="card">
+      <h3 style="color: var(--maroon);">Library Management System</h3>
+      <p>Use the sidebar to navigate. Browse books, view rooms, check sessions, and more.</p>
+    </div>
+  </main>
+
+  <!-- Route Definitions -->
+  <script>
+    window.APP_ROUTES = {
+      '/': function() { Landing.init(); renderWelcome(); },
+      '/books': function() { BooksPage.render(); },
+      '/rooms': function() { RoomsPage.render(); },
+      '/sessions': function() { SessionsPage.render(); },
+      '/login': function() { LoginPage.render('login'); },
+      '/register': function() { LoginPage.render('register'); },
+      '/forgot-password': function() { LoginPage.render('forgot'); },
+      '/profile': function() { ProfilePage.render(); },
+      '/debt': function() { DebtPage.render(); },
+      '/bookings': function() { BookingsPage.render('books'); },
+      '/room-bookings': function() { BookingsPage.render('rooms'); },
+      '/session-bookings': function() { BookingsPage.render('sessions'); },
+      '/saved-books': function() { SavedBooksPage.render(); },
+      '/librarian': function() { BooksPage.render(); },
+      '/admin': function() { AdminPage.render(); }
+    };
+
+    function renderWelcome() {
+      const container = document.getElementById('mainContent');
+      if (!container) return;
+
+      const user = auth.getCurrentUser();
+      container.innerHTML = `
+        <div class="page-title">
+          <h1>Welcome to the Library</h1>
+          <p>${user ? `Hello, ${user.fullName}!` : 'Explore our collection and services'}</p>
+        </div>
+        <div class="card-grid">
+          <div class="book-card">
+            <div class="book-cover"><i class="bi bi-book-fill"></i></div>
+            <div class="book-title">Books</div>
+            <div class="book-author">Browse our extensive collection</div>
+            <div class="action-buttons">
+              <button class="btn btn-sm btn-outline" onclick="window.location.hash='/books'">Browse Books</button>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover"><i class="bi bi-building-fill"></i></div>
+            <div class="book-title">Rooms</div>
+            <div class="book-author">Book study spaces &amp; meeting rooms</div>
+            <div class="action-buttons">
+              <button class="btn btn-sm btn-outline" onclick="window.location.hash='/rooms'">View Rooms</button>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover"><i class="bi bi-mic-fill"></i></div>
+            <div class="book-title">Sessions</div>
+            <div class="book-author">Upcoming workshops and events</div>
+            <div class="action-buttons">
+              <button class="btn btn-sm btn-outline" onclick="window.location.hash='/sessions'">View Sessions</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
