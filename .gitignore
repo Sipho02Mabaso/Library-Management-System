@@ -4,20 +4,19 @@
 
 # FrontEnd
 
-client/js/api/
-client/js/app/
-client/js/auth-page/
-client/js/auth/
-client/js/bookings/
-client/js/debt/
-client/js/landing/
-client/js/librarian/
-client/js/profile/
-client/js/role-app/
-client/js/rooms/
-client/js/saved-books/
-client/js/sessions/
-
+client/js/api.js
+client/js/app.js
+client/js/auth-page.js
+client/js/auth.js
+client/js/bookings.js
+client/js/debt.js
+client/js/landing.js
+client/js/librarian.js
+client/js/profile.js
+client/js/role-app.js
+client/js/rooms.js
+client/js/saved-books.js
+client/js/sessions.js
 
 # BackEnd
 server/
