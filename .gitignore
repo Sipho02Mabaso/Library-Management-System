@@ -3,7 +3,21 @@
 .vscode/
 
 # FrontEnd
-client/js/
+
+client/js/api/
+client/js/app/
+client/js/auth-page/
+client/js/auth/
+client/js/bookings/
+client/js/debt/
+client/js/landing/
+client/js/librarian/
+client/js/profile/
+client/js/role-app/
+client/js/rooms/
+client/js/saved-books/
+client/js/sessions/
+
 
 # BackEnd
 server/
