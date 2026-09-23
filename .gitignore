@@ -3,5 +3,17 @@
 .vscode/
 
 # BackEnd
-server/
+# 1. Ignore everything inside the server directory
+server/*
+
+# 2. Un-ignore the specific files you WANT to track
+# (Make sure the spelling and casing match exactly!)
+!server/Controllers/AdminController.cs
+!server/Controllers/AuthController.cs
+!server/Controllers/BooksController.cs
+!server/Controllers/BorrowsController.cs
+!server/Program.cs
+!server/server.http
+!server/server.csproj
+
 AGENTS.md/
