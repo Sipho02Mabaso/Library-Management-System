@@ -2,18 +2,25 @@
 .kilo/
 .vscode/
 
-# BackEnd
-# 1. Ignore everything inside the server directory
+# 1. Ignore EVERYTHING inside the server directory
 server/*
 
-# 2. Un-ignore the specific files you WANT to track
-# (Make sure the spelling and casing match exactly!)
-!server/Controllers/AdminController.cs
-!server/Controllers/AuthController.cs
-!server/Controllers/BooksController.cs
-!server/Controllers/BorrowsController.cs
+# 2. Un-ignore the Controllers folder so Git can look inside it
+!server/Controllers/
+
+# 3. Ignore the specific Controllers you DO NOT want on GitHub
+server/Controllers/FinesController.cs
+server/Controllers/LogsController.cs
+server/Controllers/ReportsController.cs
+server/Controllers/RoomBookingsController.cs
+server/Controllers/RoomsController.cs
+server/Controllers/SavedBooksController.cs
+server/Controllers/SessionBookingsController.cs
+server/Controllers/SessionsController.cs
+
+# 4. Un-ignore your root server files
 !server/Program.cs
 !server/server.http
 !server/server.csproj
 
-AGENTS.md/
+AGENTS.md
