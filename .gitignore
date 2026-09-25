@@ -9,7 +9,7 @@ server/*
 !server/Controllers/
 
 # 3. Ignore the specific Controllers you DO NOT want on GitHub
-server/Controllers/FinesController.cs
+
 server/Controllers/LogsController.cs
 server/Controllers/ReportsController.cs
 server/Controllers/RoomBookingsController.cs
