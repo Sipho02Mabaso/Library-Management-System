@@ -12,7 +12,7 @@ server/*
 
 
 
-server/Controllers/RoomBookingsController.cs
+
 server/Controllers/RoomsController.cs
 server/Controllers/SavedBooksController.cs
 server/Controllers/SessionBookingsController.cs
