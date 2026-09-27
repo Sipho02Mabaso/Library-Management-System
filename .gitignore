@@ -15,7 +15,7 @@ server/*
 
 
 
-server/Controllers/SessionBookingsController.cs
+
 server/Controllers/SessionsController.cs
 
 # 4. Un-ignore your root server files
