@@ -16,7 +16,7 @@ server/Core/interfaces/
 
 
 
-server/Core/DTos/BorrowDto.cs
+
 server/Core/DTos/FineDto.cs
 server/Core/DTOs/LogDto.cs
 server/Core/DTOs/RoomDto.cs
