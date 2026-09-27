@@ -7,11 +7,23 @@ server/*
 
 # 2. Un-ignore the Controllers folder so Git can look inside it
 !server/Controllers/
+!server/Core/
 
 # 3. Ignore the specific Controllers you DO NOT want on GitHub
+server/Core/Entities/
+server/Core/Enums/
+server/Core/interfaces/
 
 
 
+server/Core/DTos/BorrowDto.cs
+server/Core/DTos/FineDto.cs
+server/Core/DTOs/LogDto.cs
+server/Core/DTOs/RoomDto.cs
+server/Core/DTOs/SavedBookDto.cs
+server/Core/DTos/SessionDto.cs
+server/Core/DTOs/StatsDto.cs
+server/Core/DTOs/UserDto.cs
 
 
 
