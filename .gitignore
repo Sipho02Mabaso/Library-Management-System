@@ -16,7 +16,7 @@ server/*
 
 
 
-server/Controllers/SessionsController.cs
+
 
 # 4. Un-ignore your root server files
 !server/Program.cs
