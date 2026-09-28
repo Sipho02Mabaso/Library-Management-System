@@ -18,7 +18,7 @@ server/Core/interfaces/
 
 
 
-server/Core/DTOs/LogDto.cs
+
 server/Core/DTOs/RoomDto.cs
 server/Core/DTOs/SavedBookDto.cs
 server/Core/DTos/SessionDto.cs
