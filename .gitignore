@@ -22,7 +22,7 @@ server/Core/interfaces/
 
 
 
-server/Core/DTOs/StatsDto.cs
+
 server/Core/DTOs/UserDto.cs
 
 
