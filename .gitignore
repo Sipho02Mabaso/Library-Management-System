@@ -21,7 +21,7 @@ server/Core/interfaces/
 
 
 
-server/Core/DTos/SessionDto.cs
+
 server/Core/DTOs/StatsDto.cs
 server/Core/DTOs/UserDto.cs
 
