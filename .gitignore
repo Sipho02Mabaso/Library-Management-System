@@ -20,7 +20,7 @@ server/Core/interfaces/
 
 
 
-server/Core/DTOs/SavedBookDto.cs
+
 server/Core/DTos/SessionDto.cs
 server/Core/DTOs/StatsDto.cs
 server/Core/DTOs/UserDto.cs
