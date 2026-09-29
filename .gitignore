@@ -10,20 +10,16 @@ server/*
 !server/Core/
 
 # 3. Ignore the specific Controllers you DO NOT want on GitHub
-server/Core/Entities/
+
 server/Core/Enums/
 server/Core/interfaces/
 
-
-
-
-
-
-
-
-
-
-
+server/Core/Entities/RoomBookings.cs
+server/Core/Entities/SavedBook.cs
+server/Core/Entities/Session.cs
+server/Core/Entities/SessionBooking.cs
+server/Core/Entities/SystemSetting.cs
+server/Core/Entities/User.cs
 
 
 
